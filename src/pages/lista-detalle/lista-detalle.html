@@ -6,13 +6,27 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>listaDetalle</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>{{list.name}}</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card>
+        <img src="" alt="aqui va la imagen de la lista" />
+        <ion-card-content>
+            <ion-card-title>
+                Elementos a reproducir
+            </ion-card-title>
+            <ion-list>
+                <ion-item *ngFor="let media of list.media" (click)="goRep(media)">
+                    {{ media.name }}
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
 
+    <button ion-button color="danger" outline (click)="goRep()">Reproducir</button>
 </ion-content>

@@ -5,15 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+
 import { MyApp } from './app.component';
 //pages
-import { HomePage,ListaDetallePage,ListasPage,LoginPage } from '../pages/index.pages';
+import { HomePage,ListaDetallePage,ListasPage,LoginPage, ReproduccionPage } from '../pages/index.pages';
 
 //providers
 import { ListaProvider,UsuarioProvider,WebsocketProvider } from '../providers/index.providers';
 
 
-
+const config: SocketIoConfig = { url: 'http://localhost:4512', options: {} };
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { ListaProvider,UsuarioProvider,WebsocketProvider } from '../providers/in
     HomePage,
     ListaDetallePage,
     ListasPage,
-    LoginPage
+    LoginPage,
+    ReproduccionPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    SocketIoModule.forRoot(config),
     IonicModule.forRoot(MyApp),
 
   ],
@@ -35,7 +39,8 @@ import { ListaProvider,UsuarioProvider,WebsocketProvider } from '../providers/in
     HomePage,
     ListaDetallePage,
     ListasPage,
-    LoginPage
+    LoginPage,
+    ReproduccionPage
   ],
   providers: [
     StatusBar,

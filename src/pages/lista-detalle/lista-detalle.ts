@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ReproduccionPage } from '../reproduccion/reproduccion';
 
-/**
- * Generated class for the ListaDetallePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 @IonicPage()
 @Component({
@@ -14,12 +10,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'lista-detalle.html',
 })
 export class ListaDetallePage {
+  public list;
+  public reproduccionPage: ReproduccionPage;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.list = this.navParams.get('list');
+    console.log(this.list)
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ListaDetallePage');
-  }
+goRep(media){
 
+  this.navCtrl.push(ReproduccionPage, media);
+
+}
 }

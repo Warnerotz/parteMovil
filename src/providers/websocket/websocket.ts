@@ -1,17 +1,22 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 
-/*
-  Generated class for the WebsocketProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+import { Socket } from 'ng-socket-io';
 @Injectable()
 export class WebsocketProvider {
 
-  constructor(public http: HttpClient) {
+  constructor(private socket: Socket) {
     console.log('Hello WebsocketProvider Provider');
+  }
+
+  sendVideo(data) {
+    this.socket.emit('changeVideo', data);
+  }
+
+  pauseVideo(data){
+    this.socket.emit('pause', data);
+
   }
 
 }
