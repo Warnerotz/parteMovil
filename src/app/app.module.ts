@@ -4,7 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
-
+import { IonicStorageModule } from '@ionic/storage';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
 import { MyApp } from './app.component';
@@ -31,6 +31,7 @@ const config: SocketIoConfig = { url: 'http://localhost:4512', options: {} };
     HttpClientModule,
     SocketIoModule.forRoot(config),
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
 
   ],
   bootstrap: [IonicApp],

@@ -14,8 +14,8 @@ export class WebsocketProvider {
     this.socket.emit('changeVideo', data);
   }
 
-  pauseVideo(data){
-    this.socket.emit('pause', data);
+  pauseVideo(){
+    this.socket.emit('pause', true);
 
   }
 

@@ -23,8 +23,8 @@ export class ReproduccionPage {
 
   }
 
-  pauseVideo(pause){
-    this._websocket.pauseVideo(pause);
+  pauseVideo(){
+    this._websocket.pauseVideo();
 
   }
 

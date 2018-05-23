@@ -1,3 +1,27 @@
 page-login {
-
+    ion-content {
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff5f49+1,ff8c00+100 */
+        background: #ff5f49;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #ff5f49 1%, #ff8c00 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #ff5f49 1%, #ff8c00 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #ff5f49 1%, #ff8c00 100%);
+    }
+    img {
+        width: 200px;
+        height: 100%;
+    }
+    .top-20 {
+        margin-top: 20%;
+        margin: 20% auto;
+    }
+    .top-5 {
+        margin-top: 5%;
+    }
+    .inputTransparent {
+        background: transparent;
+        border: none;
+    }
 }
