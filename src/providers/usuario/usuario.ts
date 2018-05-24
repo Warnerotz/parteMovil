@@ -9,6 +9,7 @@ export class UsuarioProvider {
   public url = GLOBAL.url
   public token: string;
   public data: any;
+  public identity;
   constructor(public http: HttpClient, private platform: Platform, private storage: Storage) {
     console.log('Hello UsuarioProvider Provider');
   }
@@ -22,6 +23,24 @@ export class UsuarioProvider {
     return this.http.post(this.url + 'login', params, {headers});
 
   }
+
+  getIdentity() {
+    const identity = JSON.parse(localStorage.getItem('identity'));
+    if (identity !== undefined) {
+        return this.identity = identity;
+      }
+      return this.identity = null;
+  }
+
+  getToken() {
+    const token = localStorage.getItem('token');
+    if (token !== undefined) {
+        return this.token = token;
+      }
+      return this.token = null;
+
+  }
+
 
   cargar_storage() {
 

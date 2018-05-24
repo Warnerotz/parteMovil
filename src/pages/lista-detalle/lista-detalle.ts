@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ReproduccionPage } from '../reproduccion/reproduccion';
+import { GLOBAL } from '../../providers/global';
 
 
 
@@ -11,6 +12,7 @@ import { ReproduccionPage } from '../reproduccion/reproduccion';
 })
 export class ListaDetallePage {
   public list;
+  public url = GLOBAL.url
   public reproduccionPage: ReproduccionPage;
 
 

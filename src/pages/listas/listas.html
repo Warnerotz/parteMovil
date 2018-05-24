@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar class='headerLists'>
         <ion-title>
             Listas
         </ion-title>
@@ -7,12 +7,18 @@
 </ion-header>
 
 <ion-content>
-    <ion-list inset>
-        <ion-item *ngFor="let item of listas" [navParams]="{list: item}" [navPush]="listaDetallePage">
-            {{ item.name }}
+    <div>
+        <img class='imgUser' src="{{identity.image !== null ? url+ 'image/' + identity.image : './assets/imgs/PerfilDefecto.jpg'}}" />
 
+    </div>
+    <ion-list>
+        <ion-item *ngFor="let list of listas" [navParams]="{list: list}" [navPush]="listaDetallePage">
+            <ion-avatar item-start>
+                <img src="{{list.img !== null ? url+ 'listImage/' + list.img : './assets/imgs/PerfilDefecto.jpg'}}">
+            </ion-avatar>
+            <h1>{{list.name}}</h1>
+            <p>{{list.description}}</p>
         </ion-item>
-
     </ion-list>
 
 </ion-content>
