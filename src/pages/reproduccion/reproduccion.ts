@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WebsocketProvider } from '../../providers/websocket/websocket';
+import { GLOBAL } from '../../providers/global';
 
 
 
@@ -10,12 +11,14 @@ import { WebsocketProvider } from '../../providers/websocket/websocket';
   templateUrl: 'reproduccion.html',
 })
 export class ReproduccionPage {
-
+  public url = GLOBAL.url
   public media;
+  public list;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public _websocket: WebsocketProvider) {
-    this.media = this.navParams.data;
-    console.log(this.media);
+    this.media = this.navParams.data.media;
+    this.list = this.navParams.data.list;
+
   }
 
   sendMedia(media) {
@@ -25,6 +28,10 @@ export class ReproduccionPage {
 
   pauseVideo(){
     this._websocket.pauseVideo();
+
+  }
+  restartVideo(){
+    this._websocket.restartVideo();
 
   }
 

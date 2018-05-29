@@ -14,13 +14,17 @@
 
 
 <ion-content padding>
-    <div>
-        <h1>{{media.name}}</h1>
-    </div>
-    <div>
-        <button ion-button full (click)="sendMedia(media.name)"><ion-icon name="md-play"></ion-icon></button>
-        <button ion-button full (click)="pauseVideo()"><ion-icon name="md-pause"></ion-icon></button>
-        <button ion-button full (click)="pauseVideo(false)"><ion-icon name="md-square"></ion-icon></button>
-    </div>
-
+    <ion-card>
+        <img class='avatarLista' src="{{list.img !== null ? url+ 'listImage/' + list.img : './assets/imgs/PerfilDefecto.jpg'}}" alt="aqui va la imagen de la lista" />
+        <ion-card-content>
+            <ion-card-title>
+                {{media.name}}
+            </ion-card-title>
+            <div>
+                <button ion-button full color='secondary' (click)="sendMedia(media.name)"><ion-icon name="md-play"></ion-icon></button>
+                <button ion-button full color='dark' (click)="pauseVideo()"><ion-icon name="md-pause"></ion-icon></button>
+                <button ion-button full color='danger' (click)="restartVideo()"><ion-icon name="md-refresh"></ion-icon></button>
+            </div>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

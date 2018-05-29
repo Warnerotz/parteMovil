@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LoginPage } from '../pages/login/login';
 import { UsuarioProvider } from '../providers/index.providers';
-import { ListasPage } from '../pages/listas/listas';
+import { TabsPage } from '../pages/tabs/tabs';
 @Component({
   templateUrl: 'app.html'
 })
@@ -19,7 +19,7 @@ export class MyApp {
         if(this._usuarioProvider.data == null){
           this.rootPage = LoginPage;
         }else{
-          this.rootPage = ListasPage;
+          this.rootPage = TabsPage;
         }
 // Okay, so the platform is ready and our plugins are available.
 // Here you can do any higher level native things you might need.

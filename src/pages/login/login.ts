@@ -1,9 +1,10 @@
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { User } from '../../models/users';
 import { UsuarioProvider } from '../../providers/index.providers';
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 UsuarioProvider
 @IonicPage()
@@ -18,12 +19,20 @@ export class LoginPage {
   public body;
   public status: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public _usuarioProvider: UsuarioProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public _usuarioProvider: UsuarioProvider, public toastCtrl: ToastController) {
     this.user = new User ();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Usuario o password incorrecto',
+      duration: 3000
+    });
+    toast.present();
   }
 
   onSubmit() {
@@ -49,7 +58,7 @@ export class LoginPage {
               } else {
                 localStorage.setItem('token', this.token);
                 this.status = 'success';
-                this.navCtrl.push(HomePage);
+                this.navCtrl.push(TabsPage);
               }
             },
             error => {
@@ -60,8 +69,7 @@ export class LoginPage {
       error => {
         const errorMessage = <any> error;
               if (errorMessage != null) {
-                this.body = JSON.parse(error._body);
-                this.status = 'error';
+                this.presentToast();
               }
 
       }

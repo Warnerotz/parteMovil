@@ -1,3 +1,22 @@
 <ion-content>
-    <button ion-button outline (click)="viewLists()">Mostrar listas</button>
+    <div class='userBackground'>
+        <img class='avatarImageNav' src="{{identity.image !== null ? url+ 'image/' + identity.image : './assets/imgs/PerfilDefecto.jpg'}}" />
+    </div>
+    <div>
+        <h2 text-center>Datos de Usuario</h2>
+    </div>
+    <div class='padding-10'>
+        <p>Nombre:</p>
+        <h3>{{identity.name}} {{identity.surname}}</h3>
+        <p>Edad:</p>
+        <h3>{{identity.age}} años</h3>
+        <p>Descripción:</p>
+        <h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos commodi consequatur voluptatum rerum eligendi voluptatem eveniet veritatis mollitia, quisquam voluptas?</h3>
+        <div text-center>
+            <button ion-button icon-left large color="danger" round (click)="logOut()">
+          <ion-icon name="md-log-out"></ion-icon>
+            Log Out
+          </button>
+        </div>
+    </div>
 </ion-content>

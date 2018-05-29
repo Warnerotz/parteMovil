@@ -21,9 +21,10 @@ export class ListaDetallePage {
     console.log(this.list)
   }
 
-goRep(media){
+goRep(media, list){
+  const datos = {media, list};
 
-  this.navCtrl.push(ReproduccionPage, media);
+  this.navCtrl.push(ReproduccionPage, datos);
 
 }
 }

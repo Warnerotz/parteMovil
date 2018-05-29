@@ -17,10 +17,9 @@ export class ListaProvider {
 
   }
 
-  getListas(){
-    let url = `${URL}/lists`;
+  getListas(userId){
     const headers = new HttpHeaders({'Content-Type': 'application/json','authorization':this._usuarioProvider.getToken()});
-     return this.http.get<any>(this.url+'/lists',{headers:headers});
+     return this.http.get<any>(this.url+'/lists/' + userId,{headers:headers});
 
   }
 

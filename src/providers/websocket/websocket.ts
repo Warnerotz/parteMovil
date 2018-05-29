@@ -15,7 +15,11 @@ export class WebsocketProvider {
   }
 
   pauseVideo(){
-    this.socket.emit('pause', true);
+    this.socket.emit('pause');
+
+  }
+  restartVideo(){
+    this.socket.emit('restart');
 
   }
 

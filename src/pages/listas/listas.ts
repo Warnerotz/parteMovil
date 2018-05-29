@@ -18,10 +18,10 @@ export class ListasPage {
   public listaDetallePage = ListaDetallePage;
 
   constructor(public navCtrl: NavController,  public _listaProvider : ListaProvider, public _usuarioProvider: UsuarioProvider) {
-    this._listaProvider.getListas().subscribe(result =>{
+    this.identity = _usuarioProvider.getIdentity();
+    this._listaProvider.getListas(this.identity._id).subscribe(result =>{
       this.listas =result.lists;
     });
-    this.identity = _usuarioProvider.getIdentity();
 
   }
 

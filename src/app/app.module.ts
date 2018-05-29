@@ -9,7 +9,7 @@ import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 
 import { MyApp } from './app.component';
 //pages
-import { HomePage,ListaDetallePage,ListasPage,LoginPage, ReproduccionPage } from '../pages/index.pages';
+import { HomePage,ListaDetallePage,ListasPage,LoginPage, ReproduccionPage, TabsPage } from '../pages/index.pages';
 
 //providers
 import { ListaProvider,UsuarioProvider,WebsocketProvider } from '../providers/index.providers';
@@ -24,7 +24,8 @@ const config: SocketIoConfig = { url: 'http://localhost:4512', options: {} };
     ListaDetallePage,
     ListasPage,
     LoginPage,
-    ReproduccionPage
+    ReproduccionPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,8 @@ const config: SocketIoConfig = { url: 'http://localhost:4512', options: {} };
     ListaDetallePage,
     ListasPage,
     LoginPage,
-    ReproduccionPage
+    ReproduccionPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
